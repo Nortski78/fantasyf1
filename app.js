@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import express from 'express.js';
 import mongoose from 'mogoose.js';
 import { F1Events } from './models/f1events.js';
