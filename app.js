@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import express from 'express.js';
-import mongoose from 'mogoose.js';
+import mongoose from 'mongoose.js';
 import { F1Events } from './models/f1events.js';
 import { Players } from './models/players.js';
 import { Drivers } from './models/drivers.js';
@@ -17,7 +17,7 @@ const dbURI = 'mongodb+srv://nortski:12THfret@myatlasclusteredu.raq8enl.mongodb.
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
         console.log('Connected to database');
-        app.listen(port);
+        app.listen(port, '0.0.0.0');
     })
     .catch((error) => console.log(error));
 
