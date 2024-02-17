@@ -8,6 +8,7 @@ import { Results } from './models/results.js';
 
 //App
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Connect to database
 const dbURI = 'mongodb+srv://nortski:12THfret@myatlasclusteredu.raq8enl.mongodb.net/f1fantasy?retryWrites=true&w=majority';
