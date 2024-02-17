@@ -17,7 +17,7 @@ const dbURI = 'mongodb+srv://nortski:12THfret@myatlasclusteredu.raq8enl.mongodb.
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
         console.log('Connected to database');
-        app.listen(3000);
+        app.listen(port);
     })
     .catch((error) => console.log(error));
 
