@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import express from 'express.js';
-import mongoose from 'mongoose.js';
+import { express } from 'express.js';
+import { mongoose } from 'mongoose.js';
 import { F1Events } from './models/f1events.js';
 import { Players } from './models/players.js';
 import { Drivers } from './models/drivers.js';
