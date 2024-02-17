@@ -1,5 +1,5 @@
-import express from 'express';
-import mongoose from 'mongoose';
+import express from 'express.js';
+import mongoose from 'mogoose.js';
 import { F1Events } from './models/f1events.js';
 import { Players } from './models/players.js';
 import { Drivers } from './models/drivers.js';
