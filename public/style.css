@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    background-color: #222;
+    color: #fff;
+  }
+
+h1 {
+    padding: 0;
+    font-size: 50px;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;    
+    margin-top: 20px;
+    align-items: center;
+}
+
+#event-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#countdown {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0 20px 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#checkered {
+    height: 24px;
+    width: 100%;
+    background-color: #FFF;
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+                    linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+}
+
+#leaderboard {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+#leaderboard-head {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    color: #aaa;
+    justify-content: space-between;
+    margin: 100px 0 0 0;
+}
+
+#leaderboard-title {
+    width: 400px;
+}
+
+#score-title {
+    width: 100px;
+}
+
+.player-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    color: #fff;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+}
+
+.player-wrap:hover {
+    color: #aaa;
+}
+
+.player-points {
+    width: 100px;
+    text-align: center;
+}
+
+.driver-points {
+    width: 100px;
+    text-align: center;
+}
+
+.driver-selection {
+    width: 100%;
+    color: #aaa;
+    font-size: 0.7em;
+}
+
+.driver-selection:hover{
+    color: #aaa;
+}
+
+.driver-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9em;
+    margin: 0 0 5px 0;
+}
+
+.time {
+    color: #fff;
+    font-size: 6em;
+  }
+
+.label {
+    font-size: 2em;
+    display: block;
+    color: #aaa;
+}
+
+.hide {
+    visibility: hidden;
+    height: 0px;
+}
+
+#podium-selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+}
+
+#podium-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+}
+
+option:disabled {
+    color:#aaa;
+}
+
+#podium-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.tab {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+button {
+    font-family: Lato, sans-serif;
+    padding: 10px;
+    width: 100%;
+}
+
+#submit-btn {
+    width: 100%;
+}
+
+#player-pin {
+    width: 100%;
+    margin: 0 0 3px 0;
+}
+
+#pin-field {
+    width: 100%;
+    text-align: center;
+}
+
+select {
+    font-family: Lato, sans-serif;
+    padding: 7px;
+    margin: 0 0 3px 0;
+}
+
+textarea {
+    resize: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    font-size: 0.8em;
+    font-family: Lato, sans-serif;
+}
+
+button:disabled {
+    background-color: rgba(239, 239, 239, 1);
+    color: rgba(16, 16, 16, 1), rgba(255, 255, 255, 1);
+    border-color: rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3);
+}
