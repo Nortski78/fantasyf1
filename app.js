@@ -11,9 +11,10 @@ import { Results } from './models/results.js';
 //App
 const app = express();
 const port = process.env.PORT || 3000;
+const dbURI = process.env.DBURI;
 
 //Connect to database
-const dbURI = 'mongodb+srv://nortski:12THfret@myatlasclusteredu.raq8enl.mongodb.net/f1fantasy?retryWrites=true&w=majority';
+//const dbURI = 'mongodb+srv://nortski:12THfret@myatlasclusteredu.raq8enl.mongodb.net/f1fantasy?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
         console.log('Connected to database');
