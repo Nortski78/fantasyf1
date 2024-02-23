@@ -1,6 +1,7 @@
 import { countdown } from "./coundown-module.js";
 import { initializeClock } from "./countdown.js";
 import { eventDetails } from "./event-details-module.js";
+import { renderRules } from "./rules.js";
 import { leaderBoard } from "./leaderboard-module.js";
 import { updateLeaderboard } from "./leaderboard.js";
 import { renderPodiumButton, renderDriverOptions, updateDriverOptions, renderPinField, renderSubmitButton } from "./podium-selection-module.js";
@@ -38,6 +39,7 @@ renderPodiumButton();
 renderDriverOptions();
 renderPinField();
 renderSubmitButton();
+renderRules();
 leaderBoard();
 getEventDetails();
 getPlayerDetails();
