@@ -106,6 +106,7 @@ export function updateDriverOptions(data) {
             const option = document.createElement('option');
             option.setAttribute('value', driver.id);
             option.setAttribute('data-driverid', driver.id);
+            option.setAttribute('data-drivername', driver.driver_name);
             option.textContent = driver.driver_name;
             node.appendChild(option);
         })
@@ -140,10 +141,14 @@ const handleSubmit = async (e) => {
     e.preventDefault();
 
     const eventID = parseInt(document.querySelector('#event-name').dataset.eventid);
-    const first = parseInt(document.querySelector('#first').value);
+    /* const first = parseInt(document.querySelector('#first').value);
     const second = parseInt(document.querySelector('#second').value);
     const third = parseInt(document.querySelector('#third').value);
-    const pin = parseInt(document.querySelector('#pin-field').value);
+    const pin = parseInt(document.querySelector('#pin-field').value); */
+    const first = parseInt(document.querySelector('#first').dataset.drivername);
+    const second = parseInt(document.querySelector('#second').dataset.drivername);
+    const third = parseInt(document.querySelector('#third').dataset.drivername);
+    const pin = parseInt(document.querySelector('#pin-field').dataset.drivername);
     
     const playerID = await getPlayerDetails(pin);
 
