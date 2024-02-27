@@ -158,7 +158,7 @@ const handleSubmit = async (e) => {
         'second': second,
         'third': third,
         'player_id': playerID.id,
-        'player_name': playerID.name
+        'player_name': playerID.player_name
     }
 
     insertPodiumSelection(formData);
