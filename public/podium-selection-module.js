@@ -148,7 +148,7 @@ const handleSubmit = async (e) => {
     const first = document.querySelector('#first').dataset.drivername;
     const second = document.querySelector('#second').dataset.drivername;
     const third = document.querySelector('#third').dataset.drivername;
-    const pin = document.querySelector('#pin-field').dataset.drivername;
+    const pin = parseInt(document.querySelector('#pin-field').value);;
     
     const playerID = await getPlayerDetails(pin);
 
