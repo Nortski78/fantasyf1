@@ -123,7 +123,7 @@ app.get('/player-details-one/:pin', (req, res) => {
 
     const pin = parseInt(req.params.pin);
 
-    Players.findOne({'pin':  pin}, {'id': 1, '_id': 0})
+    Players.findOne({'pin':  pin}, {'id': 1, 'player_name': 1, '_id': 0})
     .then((result) => {
         if(result === null) result = {id: null};
         res.send(result);
@@ -138,6 +138,7 @@ app.post('/insert-podium-selection', express.json(), (req, res) => {
 
     const update = {
         player_id: req.body.player_id,
+        player_name: req.body.player_name,
         event_id: req.body.event_id,
         selections: [req.body.first, req.body.second, req.body.third]
     }

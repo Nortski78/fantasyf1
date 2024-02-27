@@ -147,7 +147,7 @@ const handleSubmit = async (e) => {
     
     const playerID = await getPlayerDetails(pin);
 
-    if(!playerID) {
+    if(!playerID.id) {
         console.log('No player found');
         return;
     }
@@ -157,7 +157,8 @@ const handleSubmit = async (e) => {
         'first': first,
         'second': second,
         'third': third,
-        'player_id': playerID.id
+        'player_id': playerID.id,
+        'player_name': playerID.name
     }
 
     insertPodiumSelection(formData);
