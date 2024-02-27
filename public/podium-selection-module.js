@@ -145,7 +145,7 @@ const handleSubmit = async (e) => {
     const second = parseInt(document.querySelector('#second').value);
     const third = parseInt(document.querySelector('#third').value);
     const pin = parseInt(document.querySelector('#pin-field').value); */
-    const first = document.querySelector('#first').dataset.drivername;
+    const first = document.querySelector('#first').selectedOptions[0].getAttribute("data-drivername");
     const second = document.querySelector('#second').dataset.drivername;
     const third = document.querySelector('#third').dataset.drivername;
     const pin = parseInt(document.querySelector('#pin-field').value);;
