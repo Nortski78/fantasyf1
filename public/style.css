@@ -310,4 +310,7 @@ button:disabled {
         text-align: center;
         width: 600px;
     }
+    #podiums-wrap{
+        width: 600px;
+    }
 }
