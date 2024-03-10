@@ -11,7 +11,8 @@ import { Results } from './models/results.js';
 //App
 const app = express();
 const port = process.env.PORT || 3000;
-const dbURI = process.env.DBURI;
+//const dbURI = process.env.DBURI;
+const dbURI = 'mongodb+srv://nortski:12THfret@myatlasclusteredu.raq8enl.mongodb.net/f1fantasy?retryWrites=true&w=majority';
 
 //Connect to database
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -37,7 +38,7 @@ app.use(express.urlencoded({extended: true}));
 
 //routes
 app.get('/event-details', (req, res) => {
-    F1Events.findOne({id: 2}, 'id event_name circuit event_start')
+    F1Events.findOne({id: 3}, 'id event_name circuit event_start')
     .then((result) => {
         //console.log(result);
         res.send(result);
@@ -69,11 +70,14 @@ app.get('/player-details', (req, res) => {
             {'$project': {'id': 1, 'points': 1, 'player_name': 1, 'bonus': 1,'driver_details': {
               'driver_name': "$result.driver_name",
               'driver_points': "$result.total_points"
-            }}}
-          ]
+            } ,
+              'testing': { '$add' : [ {'$convert': {'input': 'points', 'to': "int", 'onError': 0, 'onNull': 0}}, {'$convert': {'input': 'bonus', 'to': "int", 'onError': 0, 'onNull': 0}} ] }  
+            }}
+        ]
     )
     .sort({points: -1})
     .then((result) => {
+        console.log(result);
         res.send(result);
     })
     .catch((error) => console.log(error));
@@ -97,11 +101,12 @@ app.get('/update-player-points', (req, res) => {
             ]
           }
         },
-        {'$set': {'points': {'$sum': "$result.total_points"}}},
+        {'$set': {'points': {'$add': [{'$sum': "$result.total_points"}, {'$convert': {'input': '$bonus', 'to': "int", 'onError': 0, 'onNull': 0}}]}}},
         {'$project': {'points': 1}},
         {'$merge': {'into': "players"}}
     ]) 
     .then((result) => {
+        console.log(result);
         res.send('Player points updated');
     })
     .catch((error) => {
