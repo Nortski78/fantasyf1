@@ -54,7 +54,7 @@ export function updateLeaderboard(data) {
         //------------------------------------------------
 
         playerName.textContent = player.player_name;
-        playerPoints.textContent = player.points + player.bonus;
+        playerPoints.textContent = player.points;
 
         playerWrap.appendChild(playerName);
         playerWrap.appendChild(playerPoints);

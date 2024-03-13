@@ -64,13 +64,11 @@ app.get('/player-details', (req, res) => {
                 'as': "result",
                 'pipeline': [{'$project': {'total_points': 1, 'driver_name': 1, '_id': 0}}]
             }},
-            {'$set': {'points': {'$sum': "$result.total_points"}}},
             {'$set': {'driver_name': "'$result.driver_name'", 'driver_points': "$result.total_points"}},
             {'$project': {'id': 1, 'points': 1, 'player_name': 1, 'bonus': 1,'driver_details': {
               'driver_name': "$result.driver_name",
               'driver_points': "$result.total_points"
-            } ,
-              'testing': { '$add' : [ {'$convert': {'input': 'points', 'to': "int", 'onError': 0, 'onNull': 0}}, {'$convert': {'input': 'bonus', 'to': "int", 'onError': 0, 'onNull': 0}} ] }  
+            } 
             }}
         ]
     )
