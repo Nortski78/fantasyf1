@@ -9,6 +9,10 @@ const playersSchema = new Schema({
     driver_selection: Array
 });
 
+playersSchema.virtual("total points").get(function(){
+    return this.points + this.bonus;
+})
+
 const Players = mongoose.model('player', playersSchema);
 
 export { Players };
