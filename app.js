@@ -37,7 +37,7 @@ app.use(express.urlencoded({extended: true}));
 
 //routes
 app.get('/event-details', (req, res) => {
-    F1Events.findOne({id: 20}, 'id event_name circuit event_start')
+    F1Events.findOne({id: 21}, 'id event_name circuit event_start')
     .then((result) => {
         //console.log(result);
         res.send(result);
