@@ -13,6 +13,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const dbURI = process.env.DBURI;
 
+// Set EJS as the templating engine
+app.set("view engine", "ejs");
+
 //Connect to database
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => {
