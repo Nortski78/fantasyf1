@@ -30,7 +30,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
 
-    res.render('views/index.ejs');
+    res.render('index.ejs');
 });
 app.get('/admin', (req, res) => {
 
