@@ -3,7 +3,7 @@ export async function renderForm() {
     const drivers = await getDriverDetails();
     const events = await getEventDetails();
 
-    const form = document.querySelector('form');
+    const form = document.querySelector('#results-form');
     const eventDiv = document.createElement('div');
     const eventSelect = document.createElement('select');
     const eventLabel = document.createElement('label');
@@ -113,7 +113,7 @@ export async function renderSprintForm() {
     const drivers = await getDriverDetails();
     const events = await getEventDetails();
 
-    const form = document.querySelector('form');
+    const form = document.querySelector('#sprint-results-form');
     const eventDiv = document.createElement('div');
     const eventSelect = document.createElement('select');
     const eventLabel = document.createElement('label');
