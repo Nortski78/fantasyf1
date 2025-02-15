@@ -151,7 +151,7 @@ export async function renderSprintForm() {
         label.textContent = `${pos}. `;
         wrap.classList.add('driver-form-field');
 
-        selection.classList.add('select-group')
+        selection.classList.add('select-sprint-group')
         wrap.appendChild(label);
         wrap.appendChild(selection);
         pos += 1;
@@ -194,7 +194,7 @@ export async function renderSprintForm() {
     form.appendChild(fastestSelect);
     form.appendChild(btnDiv);
 
-    const selectNodes = document.querySelectorAll('.select-group');
+    const selectNodes = document.querySelectorAll('.select-sprint-group');
 
     //Add event listeners - disable driver from lists if already selected
     selectNodes.forEach((elem) => {
@@ -246,8 +246,11 @@ function handleRaceResultSubmit(e) {
     const eventName = option.getAttribute("data-eventname");
     const selectGroup = document.querySelectorAll('.select-group');
     const fastestLap = parseInt(document.querySelector('#fastest-lap').value);
-        console.log(positions);
+    
+    console.log(positions);
+    
     let driversArr = [];
+    
     selectGroup.forEach((driver, index) => {
         if(parseInt(driver.value) === fastestLap) {
             positions[index].points = positions[index].points + 1; 
