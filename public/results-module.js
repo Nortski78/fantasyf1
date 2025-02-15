@@ -246,7 +246,7 @@ function handleRaceResultSubmit(e) {
     const eventName = option.getAttribute("data-eventname");
     const selectGroup = document.querySelectorAll('.select-group');
     const fastestLap = parseInt(document.querySelector('#fastest-lap').value);
-
+        console.log(positions);
     let driversArr = [];
     selectGroup.forEach((driver, index) => {
         if(parseInt(driver.value) === fastestLap) {
