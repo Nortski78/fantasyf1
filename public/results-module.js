@@ -121,11 +121,11 @@ export async function renderSprintForm() {
     const submitBtn = document.createElement('button');
     const fastestSelect = document.createElement('select');
     
-    eventSelect.setAttribute('id', 'event-select');
+    eventSelect.setAttribute('id', 'sprint-event-select');
     eventLabel.classList.add('tab');
     eventLabel.textContent = "Event";
-    submitBtn.textContent = "Submit Race Result";
-    fastestSelect.setAttribute('id', 'fastest-lap');
+    submitBtn.textContent = "Submit Sprint Result";
+    fastestSelect.setAttribute('id', 'sprint-fastest-lap');
 
     eventDiv.appendChild(eventLabel);
     eventDiv.appendChild(eventSelect);
@@ -285,12 +285,12 @@ function handleSprintResultSubmit(e) {
         {id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},
         {id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},];
 
-    const eventID = parseInt(document.querySelector('#event-select').value);
-    const elem = document.querySelector('#event-select');
+    const eventID = parseInt(document.querySelector('#sprint-event-select').value);
+    const elem = document.querySelector('#sprint-event-select');
     const option = elem.options[elem.selectedIndex];
     const eventName = option.getAttribute("data-eventname");
-    const selectGroup = document.querySelectorAll('.select-group');
-    const fastestLap = parseInt(document.querySelector('#fastest-lap').value);
+    const selectGroup = document.querySelectorAll('.select-sprint-group');
+    const fastestLap = parseInt(document.querySelector('#sprint-fastest-lap').value);
 
     let driversArr = [];
     selectGroup.forEach((driver, index) => {
