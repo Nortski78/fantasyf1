@@ -1,3 +1,4 @@
-import { renderForm } from "./results-module.js";
+import { renderForm, renderSprintForm } from "./results-module.js";
 
 renderForm();
+renderSprintForm();
