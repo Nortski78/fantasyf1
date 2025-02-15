@@ -213,7 +213,7 @@ export async function renderSprintForm() {
         });
     });
 
-    form.addEventListener('submit', handleRaceResultSubmit);
+    form.addEventListener('submit', handleSprintResultSubmit);
 }
 
 const getDriverDetails = async () => {
@@ -237,6 +237,48 @@ function handleRaceResultSubmit(e) {
 
     let positions = [{id: null, points: 25}, {id: null, points: 18},{id: null, points: 15},{id: null, points: 12},{id: null, points: 10},
         {id: null, points: 8},{id: null, points: 6},{id: null, points: 4},{id: null, points: 2},{id: null, points: 1},
+        {id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},
+        {id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},];
+
+    const eventID = parseInt(document.querySelector('#event-select').value);
+    const elem = document.querySelector('#event-select');
+    const option = elem.options[elem.selectedIndex];
+    const eventName = option.getAttribute("data-eventname");
+    const selectGroup = document.querySelectorAll('.select-group');
+    const fastestLap = parseInt(document.querySelector('#fastest-lap').value);
+
+    let driversArr = [];
+    selectGroup.forEach((driver, index) => {
+        if(parseInt(driver.value) === fastestLap) {
+            positions[index].points = positions[index].points + 1; 
+        }      
+        
+            positions[index].id = parseInt(driver.value);
+            driversArr.push(parseInt(driver.value));
+        
+    })
+
+    for(const element of positions) {
+        element.event_id = eventID;
+        element.event_name = eventName;
+    }
+
+    const raceResult = {
+        event_id: eventID,
+        event_name: eventName,
+        fastest_lap: fastestLap, // not tested
+        result: positions
+    }
+
+    insertRaceResult(raceResult);
+    updateDriverResults(raceResult);
+}
+
+function handleSprintResultSubmit(e) {
+    e.preventDefault();
+
+    let positions = [{id: null, points: 8}, {id: null, points: 7},{id: null, points: 6},{id: null, points: 5},{id: null, points: 4},
+        {id: null, points: 3},{id: null, points: 2},{id: null, points: 1},{id: null, points: 0},{id: null, points: 0},
         {id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},
         {id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},{id: null, points: 0},];
 
