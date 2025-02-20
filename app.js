@@ -14,8 +14,8 @@ const port = process.env.PORT || 3000;
 const dbURI = process.env.DBURI;
 
 // Set EJS as the templating engine
-//app.set('views', 'views');
-app.set('views', __dirname + '/../views');
+app.set('views', 'views');
+//app.set('views', __dirname + '/../views');
 app.set("view engine", "ejs");
 
 //Connect to database
