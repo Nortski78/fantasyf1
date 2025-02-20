@@ -15,7 +15,7 @@ const dbURI = process.env.DBURI;
 
 // Set EJS as the templating engine
 //app.set('views', 'views');
-//app.set("view engine", "ejs");
+app.set("view engine", "ejs");
 
 //Connect to database
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
