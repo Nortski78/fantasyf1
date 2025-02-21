@@ -18,7 +18,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Set EJS as the templating engine
-//app.set('views', 'views');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
