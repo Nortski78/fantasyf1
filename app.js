@@ -2,6 +2,8 @@
 
 import  express  from 'express';
 import  mongoose  from 'mongoose';
+import { fileURLToPath } from 'url';
+import path from 'path';
 import { F1Events } from './models/f1events.js';
 import { Players } from './models/players.js';
 import { Drivers } from './models/drivers.js';
@@ -9,10 +11,11 @@ import { Selections } from './models/selections.js';
 import { Results } from './models/results.js';
 
 //App
-const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 const dbURI = process.env.DBURI;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Set EJS as the templating engine
 //app.set('views', 'views');
