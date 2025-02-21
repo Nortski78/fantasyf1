@@ -9,6 +9,7 @@ import { Selections } from './models/selections.js';
 import { Results } from './models/results.js';
 
 //App
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 const dbURI = process.env.DBURI;
