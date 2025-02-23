@@ -141,10 +141,6 @@ const handleSubmit = async (e) => {
     e.preventDefault();
 
     const eventID = parseInt(document.querySelector('#event-name').dataset.eventid);
-    /* const first = parseInt(document.querySelector('#first').value);
-    const second = parseInt(document.querySelector('#second').value);
-    const third = parseInt(document.querySelector('#third').value);
-    const pin = parseInt(document.querySelector('#pin-field').value); */
     const first = document.querySelector('#first').selectedOptions[0].getAttribute("data-drivername");
     const second = document.querySelector('#second').selectedOptions[0].getAttribute("data-drivername");
     const third = document.querySelector('#third').selectedOptions[0].getAttribute("data-drivername");
@@ -193,7 +189,8 @@ const insertPodiumSelection = async (data) => {
     }).then(res => {return res.json()})
     .then(data => {
         handlePodiumBtn();
-        alert('Podium submitted successfully');        
+        //alert('Podium submitted successfully');
+        alert(data);         
         console.log(data)        
     })
     .catch(error => console.log(error));
