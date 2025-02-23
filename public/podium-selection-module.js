@@ -192,6 +192,9 @@ const insertPodiumSelection = async (data) => {
     .then(data => {
         handlePodiumBtn();
         //alert('Podium submitted successfully');
+        console.log(first);
+        console.log(second);
+        console.log(third);
         alert("1st - " + first + "\n" + 
               "2nd - " + second + "\n" +
               "3rd - " + third + "\n \n" + 
