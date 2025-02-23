@@ -189,7 +189,7 @@ const insertPodiumSelection = async (data) => {
     .then(data => {
         handlePodiumBtn();
         //alert('Podium submitted successfully');
-        alert("1st - " + JSON.stringify(data.first) + "\n" + 
+        alert("1st - " + JSON.stringify(data) + "\n" + 
               "2nd - " + JSON.stringify(data.second) + "\n" +
               "3rd - " + JSON.stringify(data.third) + "\n \n" + 
               "You can resubmit your selection any time before the countdown ends.");               
