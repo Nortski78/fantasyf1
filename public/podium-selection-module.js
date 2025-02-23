@@ -179,7 +179,8 @@ const getPlayerDetails = async (pin) => {
 }
 
 const insertPodiumSelection = async (data) => {
-    const first = JSON.stringify(data.first);
+    //const first = JSON.stringify(data.first);
+    const first = data.first;
     fetch('insert-podium-selection',
     {
         method: "POST",
