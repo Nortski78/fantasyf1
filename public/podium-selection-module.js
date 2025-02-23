@@ -181,6 +181,8 @@ const getPlayerDetails = async (pin) => {
 const insertPodiumSelection = async (data) => {
     //const first = JSON.stringify(data.first);
     const first = data.first;
+    const second = data.second;
+    const third = data.third;
     fetch('insert-podium-selection',
     {
         method: "POST",
@@ -191,8 +193,8 @@ const insertPodiumSelection = async (data) => {
         handlePodiumBtn();
         //alert('Podium submitted successfully');
         alert("1st - " + first + "\n" + 
-              "2nd - " + data["second"] + "\n" +
-              "3rd - " + JSON.stringify(data.third) + "\n \n" + 
+              "2nd - " + second + "\n" +
+              "3rd - " + third + "\n \n" + 
               "You can resubmit your selection any time before the countdown ends.");               
     })
     .catch(error => console.log(error));
