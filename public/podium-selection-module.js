@@ -179,10 +179,11 @@ const getPlayerDetails = async (pin) => {
 }
 
 const insertPodiumSelection = async (data) => {
-    //const first = JSON.stringify(data.first);
+
     const first = data.first;
     const second = data.second;
     const third = data.third;
+    
     fetch('insert-podium-selection',
     {
         method: "POST",
@@ -191,10 +192,6 @@ const insertPodiumSelection = async (data) => {
     }).then(res => {return res.json()})
     .then(data => {
         handlePodiumBtn();
-        //alert('Podium submitted successfully');
-        console.log(first);
-        console.log(second);
-        console.log(third);
         alert("1st - " + first + "\n" + 
               "2nd - " + second + "\n" +
               "3rd - " + third + "\n \n" + 
