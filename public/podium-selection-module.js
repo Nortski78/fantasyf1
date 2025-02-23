@@ -179,7 +179,7 @@ const getPlayerDetails = async (pin) => {
 }
 
 const insertPodiumSelection = async (data) => {
-
+    console.log(data);
     fetch('insert-podium-selection',
     {
         method: "POST",
