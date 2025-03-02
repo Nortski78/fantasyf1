@@ -43,7 +43,7 @@ app.get('/admin', (req, res) => {
 
 app.get('/ping', (req, res) => {
 
-    res.send('Pinged successfully');
+    res.render('ping.ejs');
 });
 
 app.use(express.urlencoded({extended: true}));
