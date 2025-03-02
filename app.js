@@ -41,6 +41,11 @@ app.get('/admin', (req, res) => {
     res.render('admin.ejs');
 });
 
+app.get('/ping', (req, res) => {
+
+    res.send('Pinged successfully');
+});
+
 app.use(express.urlencoded({extended: true}));
 
 //routes
