@@ -49,6 +49,7 @@ app.get('/ping', (req, res) => {
 app.use(express.urlencoded({extended: true}));
 
 //routes
+// Edit this to change event
 app.get('/event-details', (req, res) => {
     F1Events.findOne({id: 3}, 'id event_name circuit event_start')
     .then((result) => {
