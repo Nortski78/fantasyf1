@@ -51,7 +51,7 @@ app.use(express.urlencoded({extended: true}));
 //routes
 // Edit this to change event
 app.get('/event-details', (req, res) => {
-    F1Events.findOne({id: 14}, 'id event_name circuit event_start')
+    F1Events.findOne({id: 15}, 'id event_name circuit event_start')
     .then((result) => {
         //console.log(result);
         res.send(result);
